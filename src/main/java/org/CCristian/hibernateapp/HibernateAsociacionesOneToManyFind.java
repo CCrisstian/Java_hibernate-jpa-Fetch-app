@@ -18,8 +18,8 @@ public class HibernateAsociacionesOneToManyFind {
             Direccion d1 = new Direccion("el vergel",123);
             Direccion d2 = new Direccion("vasco de gama",456);
 
-            cliente.getDireccions().add(d1);
-            cliente.getDireccions().add(d2);
+            cliente.getDirecciones().add(d1);
+            cliente.getDirecciones().add(d2);
             em.merge(cliente);
 
             em.getTransaction().commit();
@@ -29,7 +29,7 @@ public class HibernateAsociacionesOneToManyFind {
             em.getTransaction().begin();
 
             d1 = em.find(Direccion.class, 1L);
-            cliente.getDireccions().remove(d1);
+            cliente.getDirecciones().remove(d1);
 
             em.getTransaction().commit();
 

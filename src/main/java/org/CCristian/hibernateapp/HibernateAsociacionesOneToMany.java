@@ -19,8 +19,8 @@ public class HibernateAsociacionesOneToMany {
             Direccion d1 = new Direccion("el vergel",123);
             Direccion d2 = new Direccion("vasco de gama",456);
 
-            cliente.getDireccions().add(d1);
-            cliente.getDireccions().add(d2);
+            cliente.getDirecciones().add(d1);
+            cliente.getDirecciones().add(d2);
             em.persist(cliente);
 
             em.getTransaction().commit();
@@ -29,7 +29,7 @@ public class HibernateAsociacionesOneToMany {
             em.getTransaction().begin();
 
             cliente = em.find(Cliente.class, cliente.getId());
-            cliente.getDireccions().remove(d1);
+            cliente.getDirecciones().remove(d1);
 
             em.getTransaction().commit();
             System.out.println(cliente);

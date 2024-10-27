@@ -29,7 +29,7 @@ public class Cliente {
     , joinColumns = @JoinColumn(name = "id_cliente")
     , inverseJoinColumns = @JoinColumn(name = "id_direccion")
     , uniqueConstraints = @UniqueConstraint(columnNames = {"id_direccion"}))
-    private List<Direccion> direccions;
+    private List<Direccion> direcciones;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "cliente")
     private List<Factura> facturas;
@@ -39,7 +39,7 @@ public class Cliente {
 
     public Cliente() {
         facturas = new ArrayList<>();
-        direccions = new ArrayList<>();
+        direcciones = new ArrayList<>();
     }
 
     public Cliente(String nombre, String apellido) {
@@ -88,8 +88,8 @@ public class Cliente {
         this.formaPago = formaPago;
     }
 
-    public List<Direccion> getDireccions() {
-        return direccions;
+    public List<Direccion> getDirecciones() {
+        return direcciones;
     }
 
     public Auditoria getAudit() {
@@ -100,8 +100,8 @@ public class Cliente {
         this.audit = audit;
     }
 
-    public void setDireccions(List<Direccion> direccions) {
-        this.direccions = direccions;
+    public void setDirecciones(List<Direccion> direcciones) {
+        this.direcciones = direcciones;
     }
 
     public List<Factura> getFacturas() {
@@ -152,7 +152,7 @@ public class Cliente {
                 ", formaPago= " + formaPago +
                 ", creadoEn= " + creado +
                 ", editadoEn= " + editado+
-                ", direcciones = " + direccions +
+                ", direcciones = " + direcciones +
                 ", facturas = " + facturas +
                 ", detalles = " + detalle;
     }
